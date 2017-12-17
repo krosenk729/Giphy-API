@@ -1,0 +1,121 @@
+/*
+$light-pink: #F7E3EB;
+$pink-pink: #E80073;
+$not-black: #232323;
+*/
+
+*{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html, body, .page{
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	line-height: 1.2em;
+	font-family: 'Heebo', sans-serif;
+}
+
+
+/* Recovering from Reset */
+head{ display: none }
+h1 { font-size: 2.5em; margin: .67em 0; color: #BB3A3E; }
+h2 { font-size: 1.5em; margin: .75em 0 }
+h3, p.instructions { font-size: 1.17em; margin: .83em 0; color: #1C473E;}
+h4, p, blockquote, ul, fieldset, form, ol, dl, dir, menu, textarea, input { margin: 1.12em 0 }
+h5 { font-size: .83em; margin: 1.5em 0 }
+h6 { font-size: .75em; margin: 1.67em 0 }
+h1, h2, h3, h4, h5, h6, b, strong{font-weight: bolder}
+button, textarea, input, select   { display: inline-block }
+ol, ul, dir, menu, dd { margin-left: 40px }
+ol { list-style-type: decimal }
+ol ul, ul ol, ul ul, ol ol { margin-top: 0; margin-bottom: 0 }
+br:before { content: "\A"; white-space: pre-line }
+
+
+
+/**************************
+* Top Bar
+***************************/
+
+.page{
+	
+}
+
+.top-bar{
+	min-height: 10%;
+	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
+	padding: 1em;
+	background-color: #232323;
+	border-bottom: 4px solid #E80073;
+}
+
+.top-buttons{
+
+}
+
+.future-button{
+	flex-basis: 30%;
+	flex-shrink: 0;
+	color: #FFFFFF;
+}
+
+.kr-btn{
+	background: #232323;
+	background: rgba(255, 255, 255, 1);
+	padding: .5em 1em;
+	margin: .15em;
+	border: 2px solid #FFFFFF;
+	border-radius: 5px;
+	color: #E80073;
+	font-family: 'Titillium Web', sans-serif;
+}
+
+
+/**************************
+* Giph / Result Styles
+***************************/
+
+.result-content{
+	width: 100%;
+	display: -webkit-flex;
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+	background: #fff url('..images/pattern1.jpg');
+	background-size: 30%;
+}
+
+.result-content h2{
+	flex-basis: 100%;
+	flex-grow: 1;
+	font-size: 3em;
+}
+
+.giph-holder{
+	border: 5px solid grey;
+	margin: 10px;
+	padding: 0;
+	flex-basis: 22%;
+	flex-grow: 1;
+	min-width: 100px;
+	text-transform: capitalize;
+}
+.giph-holder img{
+	width: 100%;
+}
+
+@media screen and (max-width: 500px){
+	.top-bar{
+		flex-wrap: wrap;
+		text-align: center;
+	}
+	.top-buttons, .add-button{
+		flex-basis: 100%;
+	}
+}
+
