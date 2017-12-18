@@ -1,4 +1,4 @@
-/*
+/* GIPH APP
 $light-pink: #F7E3EB;
 $pink-pink: #E80073;
 $not-black: #232323;
@@ -35,6 +35,11 @@ ol ul, ul ol, ul ul, ol ol { margin-top: 0; margin-bottom: 0 }
 br:before { content: "\A"; white-space: pre-line }
 
 
+.clearfix:after{
+	content: '';
+	clear: both;
+	display: table;
+}
 
 /**************************
 * Top Bar
@@ -45,7 +50,6 @@ br:before { content: "\A"; white-space: pre-line }
 }
 
 .top-bar{
-	min-height: 10%;
 	display: flex;
 	justify-content: space-between;
 	align-items: stretch;
@@ -64,8 +68,51 @@ br:before { content: "\A"; white-space: pre-line }
 	color: #FFFFFF;
 }
 
-.kr-btn{
+.form-input + .form-label {
+  position: relative;
+  padding: 0 1em;
+  cursor: text;
+  color: #6A7989;
+  transition: transform 0.3s, color 0.5s;
+  transition: all 0.3s;
+}
+
+.form-input:focus + .form-label {
+  color: #333333;
+  transform: translateY(-40px) scale(0.8);
+}
+
+#add-button{
+	position: relative;
+	margin: 0;
+}
+
+#add-button label{
+	position: absolute;
+	top: 1.5em;
+	z-index: 1;
+	transition: 0.3s;
+}
+
+#add-button:focus label, #add-button:hover label{
+	top: -.5em;
+	font-size: smaller;
+}
+
+#add-button input{
 	background: #232323;
+	background: rgba(255, 255, 255, 0);
+	border: none;
+	border-bottom: 2px solid #FFFFFF;
+	color: #F7E3EB;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	height: 3em;
+}
+
+.kr-btn{
+	background: #FFFFFF;
 	background: rgba(255, 255, 255, 1);
 	padding: .5em 1em;
 	margin: .15em;
@@ -73,6 +120,7 @@ br:before { content: "\A"; white-space: pre-line }
 	border-radius: 5px;
 	color: #E80073;
 	font-family: 'Titillium Web', sans-serif;
+	text-transform: uppercase;
 }
 
 
@@ -97,16 +145,39 @@ br:before { content: "\A"; white-space: pre-line }
 }
 
 .giph-holder{
-	border: 5px solid grey;
 	margin: 10px;
 	padding: 0;
-	flex-basis: 22%;
+	flex-basis: 30%;
 	flex-grow: 1;
 	min-width: 100px;
 	text-transform: capitalize;
+	position: relative;
 }
+
+.giph-holder:nth-child(even){
+	background-image: url('..images/pattern3.jpg');
+}
+
 .giph-holder img{
 	width: 100%;
+}
+
+.giph-holder a{
+	text-decoration: none;
+	color: #FFFFFF;
+	position: absolute;
+	top: 2px;
+	right: 2px;
+	text-shadow: -3px 3px 5px #232323;
+}
+.giph-holder a:hover{
+	color: #E80073;
+	text-decoration: #E80073 underline double;
+	font-size: larger;
+}
+
+.giph-holder h4{
+	font-size: smaller;
 }
 
 @media screen and (max-width: 500px){
@@ -114,7 +185,7 @@ br:before { content: "\A"; white-space: pre-line }
 		flex-wrap: wrap;
 		text-align: center;
 	}
-	.top-buttons, .add-button{
+	.top-buttons, #add-button{
 		flex-basis: 100%;
 	}
 }
