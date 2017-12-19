@@ -4,6 +4,7 @@
 	<title>Gif that Gal</title>
 	<meta charset="utf-8">
 	<meta name="description" content="An app to use AJAX to get giphs">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Heebo:700|Titillium+Web:700" rel="stylesheet"> 
 	<link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -12,10 +13,12 @@
 		<div class="top-bar">
 			<div class="top-buttons">
 			</div>
-			<div class="future-button clearfix">
-				<form id="add-button">
-					<label for="newAdd">Search for another:</label>
-					<input type="text" id="newAdd">
+			<div class="future-button">
+				<form id="add-form">
+					<div class="floating-label-wrap">
+						<input type="text" id="newAdd" placeholder=" ">
+						<label for="newAdd">Search for another:</label>
+					</div>
 				</form>
 			</div>
 		</div>

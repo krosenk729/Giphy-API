@@ -1,4 +1,4 @@
-
+var test;
 $(document).ready(function(){
 	/*******************************/
 	/* Event Handlers
@@ -7,15 +7,18 @@ $(document).ready(function(){
 	$('.top-buttons').on('click','button',function(){
 		var clicked = $(this).html();
 		outWithTheOld( clicked );
-		console.log('clicked '+ clicked);
 		getSomeGiphs( clicked );
 	});
 
-	$('#add-button').on('submit', function(event){
+	$('#add-form').on('submit', function(event){
 		event.preventDefault();
 
 		var t = $(this).find('input');
-		addButton( t.val() );
+		var u = t.val();
+		addButton( u );
+		outWithTheOld( u );
+		getSomeGiphs( u );
+		
 		t.val('');
 
 	});
@@ -57,7 +60,7 @@ $(document).ready(function(){
 
 		var whatWeGot = $.ajax({
 			url: gphyURL,
-			data: {q: searchWord, api_key: krKey, limit: 12, rating: 'g'},
+			data: {q: searchWord, api_key: krKey, limit: 6, rating: 'g'},
 			method: 'GET',
 			success: function(response){
 				var r = response.data;

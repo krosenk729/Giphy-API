@@ -58,58 +58,57 @@ br:before { content: "\A"; white-space: pre-line }
 	border-bottom: 4px solid #E80073;
 }
 
-.top-buttons{
-
-}
 
 .future-button{
 	flex-basis: 30%;
 	flex-shrink: 0;
 	color: #FFFFFF;
+	padding-left: 10px;
+	padding-bottom: 50px;
+	min-height: 50px;
 }
 
-.form-input + .form-label {
-  position: relative;
-  padding: 0 1em;
-  cursor: text;
-  color: #6A7989;
-  transition: transform 0.3s, color 0.5s;
-  transition: all 0.3s;
-}
-
-.form-input:focus + .form-label {
-  color: #333333;
-  transform: translateY(-40px) scale(0.8);
-}
-
-#add-button{
+.floating-label-wrap{
 	position: relative;
-	margin: 0;
 }
 
-#add-button label{
-	position: absolute;
-	top: 1.5em;
-	z-index: 1;
-	transition: 0.3s;
-}
-
-#add-button:focus label, #add-button:hover label{
-	top: -.5em;
-	font-size: smaller;
-}
-
-#add-button input{
-	background: #232323;
-	background: rgba(255, 255, 255, 0);
-	border: none;
-	border-bottom: 2px solid #FFFFFF;
-	color: #F7E3EB;
-	width: 100%;
+.floating-label-wrap input{
 	position: absolute;
 	top: 0;
-	height: 3em;
+	left: 0;
+	display: block;
+	z-index: 1;
+	width: 100%;
+	height: 30px;
+	background: transparent;
+	font-size: 18px;
+	color: #F7E3EB;
+	border: none;
+	border-bottom: 2px solid #FFFFFF;
 }
+
+.floating-label-wrap label{
+  color: #FFFFFF; /*fallback*/
+  color: rgba(255,255,255,.25);
+  position: absolute;
+  pointer-events: none;
+  top: 20px;
+  left: 2px;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+
+.floating-label-wrap input:focus{
+	border-bottom-color: #F7E3EB;
+}
+
+.floating-label-wrap input:focus ~ label,
+.floating-label-wrap input:not(:placeholder-shown) ~ label{
+  transform: translateX(-2px) translateY(-20px) scale(0.8);
+  transform-origin: left top;
+}
+
 
 .kr-btn{
 	background: #FFFFFF;
@@ -184,8 +183,9 @@ br:before { content: "\A"; white-space: pre-line }
 	.top-bar{
 		flex-wrap: wrap;
 		text-align: center;
+		overflow: visible;
 	}
-	.top-buttons, #add-button{
+	.top-buttons, .future-button{
 		flex-basis: 100%;
 	}
 }
