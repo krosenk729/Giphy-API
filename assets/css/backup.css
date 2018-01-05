@@ -1,21 +1,8 @@
+/* GIPH APP
 $light-pink: #F7E3EB;
 $pink-pink: #E80073;
 $not-black: #232323;
-
-@mixin flex_disp{
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-@mixin transition($time, $time_fun, $which:all){
-  transition: $time $time_fun $which;
-  -webkit-transition: $time $time_fun $which;
-  -moz-transition: $time $time_fun $which;
-  -o-transition: $time $time_fun $which;
-}
-
+*/
 
 *{
 	-webkit-box-sizing: border-box;
@@ -54,18 +41,21 @@ br:before { content: "\A"; white-space: pre-line }
 	display: table;
 }
 
-//*************************
-// Top Bar
-//*************************
+/**************************
+* Top Bar
+***************************/
 
+.page{
+	
+}
 
 .top-bar{
-	@include flex_disp; //display: flex;
+	display: flex;
 	justify-content: space-between;
 	align-items: stretch;
 	padding: 1em;
-	background-color: $not-black;
-	border-bottom: 4px solid $pink-pink;
+	background-color: #232323;
+	border-bottom: 4px solid #E80073;
 }
 
 
@@ -80,41 +70,43 @@ br:before { content: "\A"; white-space: pre-line }
 
 .floating-label-wrap{
 	position: relative;
+}
 
-	input{
-		position: absolute;
-		top: 0;
-		left: 0;
-		display: block;
-		z-index: 1;
-		width: 100%;
-		height: 30px;
-		background: transparent;
-		font-size: 18px;
-		color: $light-pink;
-		border: none;
-		border-bottom: 2px solid #FFFFFF;
+.floating-label-wrap input{
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	z-index: 1;
+	width: 100%;
+	height: 30px;
+	background: transparent;
+	font-size: 18px;
+	color: #F7E3EB;
+	border: none;
+	border-bottom: 2px solid #FFFFFF;
+}
 
-		&:focus{
-			border-bottom-color: $light-pink;
-		}
-	}
+.floating-label-wrap label{
+  color: #FFFFFF; /*fallback*/
+  color: rgba(255,255,255,.25);
+  position: absolute;
+  pointer-events: none;
+  top: 20px;
+  left: 2px;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
 
-	label{
-	  color: #FFFFFF; //fallback
-	  color: rgba(255,255,255,.25);
-	  position: absolute;
-	  pointer-events: none;
-	  top: 20px;
-	  left: 2px;
-	  @include transition(0.2s, ease, all);
-	}
+.floating-label-wrap input:focus{
+	border-bottom-color: #F7E3EB;
+}
 
-	input:focus ~ label,
-	input:not(:placeholder-shown) ~ label{
-	  transform: translateX(-2px) translateY(-20px) scale(0.8);
-	  transform-origin: left top;
-	}
+.floating-label-wrap input:focus ~ label,
+.floating-label-wrap input:not(:placeholder-shown) ~ label{
+  transform: translateX(-2px) translateY(-20px) scale(0.8);
+  transform-origin: left top;
 }
 
 
@@ -125,15 +117,15 @@ br:before { content: "\A"; white-space: pre-line }
 	margin: .15em;
 	border: 2px solid #FFFFFF;
 	border-radius: 5px;
-	color: $pink-pink;
+	color: #E80073;
 	font-family: 'Titillium Web', sans-serif;
 	text-transform: uppercase;
 }
 
 
-//*************************
-// Giph / Result Styles
-//*************************
+/**************************
+* Giph / Result Styles
+***************************/
 
 .result-content{
 	width: 100%;
@@ -143,14 +135,13 @@ br:before { content: "\A"; white-space: pre-line }
 	text-align: center;
 	background: #fff url('..images/pattern1.jpg');
 	background-size: 30%;
-
-	h2{
-		flex-basis: 100%;
-		flex-grow: 1;
-		font-size: 3em;
-	}
 }
 
+.result-content h2{
+	flex-basis: 100%;
+	flex-grow: 1;
+	font-size: 3em;
+}
 
 .giph-holder{
 	margin: 10px;
@@ -160,33 +151,32 @@ br:before { content: "\A"; white-space: pre-line }
 	min-width: 100px;
 	text-transform: capitalize;
 	position: relative;
+}
 
-	&:nth-child(even){
-		background-image: url('..images/pattern3.jpg');
-	}
+.giph-holder:nth-child(even){
+	background-image: url('..images/pattern3.jpg');
+}
 
-	img{
-		width: 100%;
-	}
+.giph-holder img{
+	width: 100%;
+}
 
-	a{
-		text-decoration: none;
-		color: #FFFFFF;
-		position: absolute;
-		top: 2px;
-		right: 2px;
-		text-shadow: -3px 3px 5px $not-black;
+.giph-holder a{
+	text-decoration: none;
+	color: #FFFFFF;
+	position: absolute;
+	top: 2px;
+	right: 2px;
+	text-shadow: -3px 3px 5px #232323;
+}
+.giph-holder a:hover{
+	color: #E80073;
+	text-decoration: #E80073 underline double;
+	font-size: larger;
+}
 
-		&:hover{
-				color: $pink-pink;
-				text-decoration: $pink-pink underline double;
-				font-size: larger;
-			}
-
-	}
-	h4{
-		font-size: smaller;
-	}
+.giph-holder h4{
+	font-size: smaller;
 }
 
 @media screen and (max-width: 500px){
