@@ -68,7 +68,8 @@ $(document).ready(function(){
 					var c = '';
 					c += '<div class="giph-holder">';
 					c += '<img src="' + item.images.fixed_width_still.url + '">';
-					c += '<a href="'+ item.url +'" target="_blank"><h4>' + item.title + '</h4></a>';
+					c += '<a href="'+ item.url +'" target="_blank"><h4>' + item.title + '</h4>';
+					c += '<h4>Rating:' + item.rating.toUpperCase() + '</h4></a>';
 					c += '</div>';
 					$('.result-content').append(c);
 				} );

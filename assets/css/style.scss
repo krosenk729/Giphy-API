@@ -160,6 +160,7 @@ br:before { content: "\A"; white-space: pre-line }
 	min-width: 100px;
 	text-transform: capitalize;
 	position: relative;
+	text-align: right;
 
 	&:nth-child(even){
 		background-image: url('..images/pattern3.jpg');

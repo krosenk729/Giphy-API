@@ -147,7 +147,8 @@ br:before {
   flex-grow: 1;
   min-width: 100px;
   text-transform: capitalize;
-  position: relative; }
+  position: relative;
+  text-align: right; }
   .giph-holder:nth-child(even) {
     background-image: url("..images/pattern3.jpg"); }
   .giph-holder img {
