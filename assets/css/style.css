@@ -59,6 +59,9 @@ br:before {
   content: "\A";
   white-space: pre-line; }
 
+input {
+  outline: none !important; }
+
 .clearfix:after {
   content: '';
   clear: both;

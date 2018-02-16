@@ -46,7 +46,7 @@ ol, ul, dir, menu, dd { margin-left: 40px }
 ol { list-style-type: decimal }
 ol ul, ul ol, ul ul, ol ol { margin-top: 0; margin-bottom: 0 }
 br:before { content: "\A"; white-space: pre-line }
-
+input{ outline: none !important }
 
 .clearfix:after{
 	content: '';
